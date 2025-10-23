@@ -16,6 +16,11 @@ function TodoList() {
     setTodo({description: '', date: '', priority: 'low'});
   };
 
+  const clearTodos = () => {
+    setTodos([]);
+    setTodo({description: '', date: '', priority: 'low'});
+  }
+
   return(
     <>
       <h3>My Todos</h3>  
@@ -39,6 +44,7 @@ function TodoList() {
         <option value="high">High</option>
       </select>
       <button onClick={addTodo}>Add</button>  
+      <button onClick={clearTodos}>Clear</button>
       <TodoTable todos={todos} /> 
      </>
   );
